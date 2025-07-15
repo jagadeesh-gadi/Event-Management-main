@@ -517,7 +517,7 @@ public class UserController {
 		    }
 		     
 		    return "forgot_password_form";
-		}
+		} 
 		
 		
 		
