@@ -1,6 +1,7 @@
 # Event_management# Event-Management-main
 
 Introduction
+
 The event management sector faces numerous operational challenges, including disorganized
 workflows, dependency on manual processes, and the growing need for a streamlined user
 experience. To address these issues, the Event Management System (EMS) project was
