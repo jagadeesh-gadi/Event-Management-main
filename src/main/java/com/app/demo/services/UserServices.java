@@ -105,7 +105,8 @@ public class UserServices {
 
 		public User findByRole(String role) {
 			// TODO Auto-generated method stub
-			return userrepo.findbyRole(role);
+			return userrepo.findByRole(role);
+
 		}
 
 		public void saveuserToDB(String firstName, String lastName, String emailId, String phoneNumber, String address,
