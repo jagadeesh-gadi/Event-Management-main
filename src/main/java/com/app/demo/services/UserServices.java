@@ -99,9 +99,9 @@ public class UserServices {
 	    }
 
 		public List<User> findByKey(String searchkey) {
-			// TODO Auto-generated method stub
-			return  userrepo.findByKey(searchkey);
-		}
+    return userrepo.findByKey(searchkey);
+}
+
 
 		public User findByRole(String role) {
 			// TODO Auto-generated method stub
