@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
@@ -108,7 +109,7 @@ public class AdminController {
          return "AdminUserDetails";
       } else {
          model.addAttribute("user_keyword", searchkey);
-         listuser = this.userservice.findBykey(searchkey);
+         listuser = this.userservice.findByKey(searchkey);
          model.addAttribute("Userlist", listuser);
          return "AdminUserDetails";
       }
