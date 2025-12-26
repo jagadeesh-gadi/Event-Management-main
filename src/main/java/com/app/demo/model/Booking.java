@@ -68,7 +68,6 @@ public class Booking {
 @JoinColumn(name = "hotel_id")
 private Hotel hotel;
 
-	private Hotel hotel;
 	
 	@ManyToOne
     @JoinColumn(name = "catering_id")
