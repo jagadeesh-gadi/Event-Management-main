@@ -11,11 +11,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-@Entity(name="bookings")
+@Entity
+@Table(name = "bookings")
 public class Booking {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
 	@Column(name="event_date")
@@ -54,17 +55,21 @@ public class Booking {
 	@Column(name="payment_status")
 	private int payment_status;
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "hotel_id")
 	private Hotel hotel;
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "catering_id")
 	private Catering catering;
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "event_id")
 	private Event event;
 
 	
