@@ -12,34 +12,30 @@ import org.springframework.transaction.annotation.Transactional;
 import com.app.demo.model.User;
 
 
+
 @Repository
-
 public interface UserRepo extends JpaRepository<User, Integer> {
-	
-	public User findByEmail(String email);
-	
-	public User findByResetPasswordToken(String token);
-	
-	@Modifying
-	@Transactional
-	@Query("Update user set email=?1,first_name=?2,last_name=?3,gender=?4,contact_no=?5,address=?6,role=?7 where Id=?8 ")
-	public void updateUser(String email,String firstName,String lastName,String gender,String contactno,String address,String role,int id);
 
-	@Modifying
-	@Transactional
-	@Query("Update user set email=?1,first_name=?2,last_name=?3,gender=?4,contact_no=?5,address=?6,role=?7 ,password=?8 ,confirm_password=?9 where Id=?10 ")
-	public void updateUserpro(String email, String firstName, String lastName, String gender, String contactno,String address, String role, String password, String cpassword, int id);
+    User findByEmail(String email);
 
-	@Query("SELECT u FROM User u WHERE u.firstName LIKE %?1% OR u.lastName LIKE %?1% OR u.email LIKE %?1% OR u.contactNo LIKE %?1% OR u.gender LIKE %?1% OR u.role LIKE %?1%")
-List<User> findByKey(String searchkey);
+    User findByResetPasswordToken(String token);
 
+    @Modifying
+    @Transactional
+    @Query("UPDATE User u SET u.email=?1, u.firstName=?2, u.lastName=?3, u.gender=?4, u.contactNo=?5, u.address=?6, u.role=?7 WHERE u.id=?8")
+    void updateUser(String email, String firstName, String lastName, String gender, String contactno, String address, String role, int id);
 
+    @Modifying
+    @Transactional
+    @Query("UPDATE User u SET u.email=?1, u.firstName=?2, u.lastName=?3, u.gender=?4, u.contactNo=?5, u.address=?6, u.role=?7, u.password=?8, u.confirmPassword=?9 WHERE u.id=?10")
+    void updateUserpro(String email, String firstName, String lastName, String gender, String contactno, String address, String role, String password, String cpassword, int id);
 
-	 @Query("select u from User u where u.role = ?1")
-     public User findByRole(String role);
+    @Query("SELECT u FROM User u WHERE u.firstName LIKE %?1% OR u.lastName LIKE %?1% OR u.email LIKE %?1% OR u.contactNo LIKE %?1% OR u.gender LIKE %?1% OR u.role LIKE %?1%")
+    List<User> findByKey(String searchkey);
 
+    @Query("SELECT u FROM User u WHERE u.role = ?1")
+    User findByRole(String role);
 
-	@Query("select count(u) from user u where role=?1")
-	public long countByRole(String string);
-
+    @Query("SELECT COUNT(u) FROM User u WHERE u.role=?1")
+    long countByRole(String role);
 }
