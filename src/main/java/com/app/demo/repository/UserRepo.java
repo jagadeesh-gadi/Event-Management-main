@@ -31,7 +31,7 @@ public interface UserRepo extends JpaRepository<User, Integer> {
 	public void updateUserpro(String email, String firstName, String lastName, String gender, String contactno,String address, String role, String password, String cpassword, int id);
 
 	@Query("select u from user u where first_name LIKE %?1% or last_name LIKE %?1% or email LIKE %?1% or contact_no LIKE %?1% or gender LIKE %?1% or role LIKE %?1%")
-	public List<User> findBykey(String searchkey);
+	public List<User> findbykey(String searchkey);
 
 
 	 @Query("select u from User u where u.role = ?1")
