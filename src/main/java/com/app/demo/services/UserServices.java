@@ -98,9 +98,9 @@ public class UserServices {
 	        userrepo.save(user);
 	    }
 
-		public List<User> findBykey(String searchkey) {
+		public List<User> findByKey(String searchkey) {
 			// TODO Auto-generated method stub
-			return userrepo.findBykey(searchkey);
+			return  userrepo.findByKey(searchkey);
 		}
 
 		public User findByRole(String role) {
