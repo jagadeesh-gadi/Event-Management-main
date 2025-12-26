@@ -30,8 +30,9 @@ public interface UserRepo extends JpaRepository<User, Integer> {
 	@Query("Update user set email=?1,first_name=?2,last_name=?3,gender=?4,contact_no=?5,address=?6,role=?7 ,password=?8 ,confirm_password=?9 where Id=?10 ")
 	public void updateUserpro(String email, String firstName, String lastName, String gender, String contactno,String address, String role, String password, String cpassword, int id);
 
-	@Query("select u from user u where first_name LIKE %?1% or last_name LIKE %?1% or email LIKE %?1% or contact_no LIKE %?1% or gender LIKE %?1% or role LIKE %?1%")
-	public List<User> findBykey(String searchkey);
+	@Query("SELECT u FROM User u WHERE u.firstName LIKE %?1% OR u.lastName LIKE %?1% OR u.email LIKE %?1% OR u.contactNo LIKE %?1% OR u.gender LIKE %?1% OR u.role LIKE %?1%")
+List<User> findByKey(String searchkey);
+
 
 
 	 @Query("select u from User u where u.role = ?1")
