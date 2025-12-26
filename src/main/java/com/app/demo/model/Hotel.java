@@ -11,11 +11,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-@Entity(name="hotel")
+@Entity
+@Table(name = "hotel")
+
 public class Hotel {
 
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+   @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
     
     @Column(name="hotel_name")
