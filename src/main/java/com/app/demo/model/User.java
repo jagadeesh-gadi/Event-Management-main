@@ -12,7 +12,8 @@ import javax.persistence.Table;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-@Entity(name="user")
+@Entity
+@Table(name = "users")
 public class User {
 	   
 	    @Id
