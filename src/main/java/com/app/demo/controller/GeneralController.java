@@ -28,6 +28,7 @@ import com.app.demo.services.VendorServices;
 
 
 @Controller
+@RequestMapping("/general")
 public class GeneralController {
 	
 	@Autowired
@@ -52,6 +53,7 @@ public class GeneralController {
 	private JavaMailSender mailSender;
 	
 	@RequestMapping(value="/",method= RequestMethod.GET)
+	    @GetMapping("/home")
 	public String home() {
 		return "index";
 	}
