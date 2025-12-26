@@ -14,9 +14,10 @@ import com.app.demo.model.Hotel;
 public interface HotelRepo extends JpaRepository<Hotel,Integer>{
 	
 		@Modifying
-		@Transactional
-		@Query("Update hotel set hotel_name=?1,hotel_desc=?2,location=?3,price=?4 where id=?5 ")
-		public void updateHotel(String hotelname,String hoteldesc, String location,int price,int id);
+        @Transactional
+        @Query("UPDATE Hotel h SET h.hotelName=?1, h.hotelDesc=?2, h.location=?3, h.price=?4 WHERE h.id=?5")
+        void updateHotel(String hotelName, String hotelDesc, String location, int price, int id);
+
 
 		@Modifying
 		@Transactional
