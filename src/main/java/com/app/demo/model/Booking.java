@@ -64,15 +64,17 @@ public class Booking {
     private User user;
 
 	
-	@ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "hotel_id")
+	@ManyToOne
+@JoinColumn(name = "hotel_id")
+private Hotel hotel;
+
 	private Hotel hotel;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
     @JoinColumn(name = "catering_id")
 	private Catering catering;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
     @JoinColumn(name = "event_id")
 	private Event event;
 
