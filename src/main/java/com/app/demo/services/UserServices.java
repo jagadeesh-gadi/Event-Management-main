@@ -100,7 +100,7 @@ public class UserServices {
 
 		public List<User> findBykey(String searchkey) {
 			// TODO Auto-generated method stub
-			return userrepo.findbykey(searchkey);
+			return userrepo.findBykey(searchkey);
 		}
 
 		public User findByRole(String role) {
