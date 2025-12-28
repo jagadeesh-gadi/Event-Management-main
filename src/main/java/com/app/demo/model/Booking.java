@@ -1,7 +1,246 @@
-	package com.app.demo.model;
+// 	package com.app.demo.model;
+
+// import java.sql.Date;
+// import java.sql.Time;
+
+// import javax.persistence.Column;
+// import javax.persistence.Entity;
+// import javax.persistence.FetchType;
+// import javax.persistence.GeneratedValue;
+// import javax.persistence.GenerationType;
+// import javax.persistence.Id;
+// import javax.persistence.JoinColumn;
+// import javax.persistence.ManyToOne;
+// import javax.persistence.Table;
+
+
+
+// @Entity
+// @Table(name = "bookings")
+// public class Booking {
+	
+// 	@Id
+// 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+// 	private int id;
+	
+// 	@Column(name="event_date")
+// 	private Date event_date;
+	
+// 	@Column(name="event_start_time")
+// 	private String start_at;
+	
+// 	@Column(name="max_total_hour")
+// 	private String max_total_hour;
+	
+// 	@Column(name="amount")
+// 	private int amount;
+	
+// 	@Column(name="no_of_guest")
+// 	private String no_of_guest;
+	
+// 	@Column(name="photographer",columnDefinition = "text")
+// 	private String photographer_name_desc;
+	
+// 	@Column(name="dj",columnDefinition = "text")
+// 	private String dj_name_desc;
+	
+// 	@Column(name="makeupartist",columnDefinition = "text")
+// 	private String makeupartist_name_desc;
+	
+// 	@Column(name="decorator",columnDefinition = "text")
+// 	private String decorator_name_desc;
+	
+// 	@Column(name="bookedon")
+// 	private String current_date;
+	
+// 	@Column(name="accept_status")
+// 	private int accept_status;
+	
+// 	@Column(name="payment_status")
+// 	private int payment_status;
+	
+// 	@ManyToOne(fetch = FetchType.LAZY)
+//     @JoinColumn(name = "user_id", nullable = false)
+//     private User user;
+
+	
+// 	@ManyToOne
+// @JoinColumn(name = "hotel_id")
+// private Hotel hotel;
+
+	
+// 	@ManyToOne
+//     @JoinColumn(name = "catering_id")
+// 	private Catering catering;
+	
+// 	@ManyToOne
+//     @JoinColumn(name = "event_id")
+// 	private Event event;
+
+	
+	
+// 	public Hotel getHotel() {
+// 		return hotel;
+// 	}
+
+// 	public void setHotel(Hotel hotel) {
+// 		this.hotel = hotel;
+// 	}
+
+// 	public Catering getCatering() {
+// 		return catering;
+// 	}
+
+// 	public void setCatering(Catering catering) {
+// 		this.catering = catering;
+// 	}
+
+// 	public Event getEvent() {
+// 		return event;
+// 	}
+
+// 	public void setEvent(Event event) {
+// 		this.event = event;
+// 	}
+
+// 	public User getUser() {
+// 		return user;
+// 	}
+
+// 	public void setUser(User user) {
+// 		this.user = user;
+// 	}
+
+// 	public int getId() {
+// 		return id;
+// 	}
+
+// 	public void setId(int id) {
+// 		this.id = id;
+// 	}
+
+	
+
+// 	public Date getEvent_date() {
+// 		return event_date;
+// 	}
+
+// 	public void setEvent_date(Date event_date) {
+// 		this.event_date = event_date;
+// 	}
+
+// 	public String getStart_at() {
+// 		return start_at;
+// 	}
+
+// 	public void setStart_at(String start_at) {
+// 		this.start_at = start_at;
+// 	}
+
+// 	public String getMax_total_hour() {
+// 		return max_total_hour;
+// 	}
+
+// 	public void setMax_total_hour(String max_total_hour) {
+// 		this.max_total_hour = max_total_hour;
+// 	}
+
+// 	public int getAmount() {
+// 		return amount;
+// 	}
+
+// 	public void setAmount(int amount) {
+// 		this.amount = amount;
+// 	}
+
+// 	public String getNo_of_guest() {
+// 		return no_of_guest;
+// 	}
+
+// 	public void setNo_of_guest(String no_of_guest) {
+// 		this.no_of_guest = no_of_guest;
+// 	}
+
+// 	public String getPhotographer_name_desc() {
+// 		return photographer_name_desc;
+// 	}
+
+// 	public void setPhotographer_name_desc(String photographer_name_desc) {
+// 		this.photographer_name_desc = photographer_name_desc;
+// 	}
+
+// 	public String getDj_name_desc() {
+// 		return dj_name_desc;
+// 	}
+
+// 	public void setDj_name_desc(String dj_name_desc) {
+// 		this.dj_name_desc = dj_name_desc;
+// 	}
+
+// 	public String getMakeupartist_name_desc() {
+// 		return makeupartist_name_desc;
+// 	}
+
+// 	public void setMakeupartist_name_desc(String makeupartist_name_desc) {
+// 		this.makeupartist_name_desc = makeupartist_name_desc;
+// 	}
+
+// 	public String getDecorator_name_desc() {
+// 		return decorator_name_desc;
+// 	}
+
+// 	public void setDecorator_name_desc(String decorator_name_desc) {
+// 		this.decorator_name_desc = decorator_name_desc;
+// 	}
+
+// 	public String getCurrent_date() {
+// 		return current_date;
+// 	}
+
+// 	public void setCurrent_date(String current_date) {
+// 		this.current_date = current_date;
+// 	}
+
+// 	public int getAccept_status() {
+// 		return accept_status;
+// 	}
+
+// 	public void setAccept_status(int accept_status) {
+// 		this.accept_status = accept_status;
+// 	}
+
+// 	public int getPayment_status() {
+// 		return payment_status;
+// 	}
+
+// 	public void setPayment_status(int payment_status) {
+// 		this.payment_status = payment_status;
+// 	}
+
+// 	@Override
+// 	public String toString() {
+// 		return "Booking [id=" + id + ", event_date=" + event_date + ", start_at=" + start_at + ", max_total_hour="
+// 				+ max_total_hour + ", amount=" + amount + ", no_of_guest=" + no_of_guest + ", photographer_name_desc="
+// 				+ photographer_name_desc + ", dj_name_desc=" + dj_name_desc + ", makeupartist_name_desc="
+// 				+ makeupartist_name_desc + ", decorator_name_desc=" + decorator_name_desc + ", current_date="
+// 				+ current_date + ", accept_status=" + accept_status + ", payment_status=" + payment_status + ", user="
+// 				+ user + "]";
+// 	}
+
+
+
+
+	
+	
+	
+	
+// }
+
+
+
+package com.app.demo.model;
 
 import java.sql.Date;
-import java.sql.Time;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,225 +252,220 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "bookings")
 public class Booking {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
-	
-	@Column(name="event_date")
-	private Date event_date;
-	
-	@Column(name="event_start_time")
-	private String start_at;
-	
-	@Column(name="max_total_hour")
-	private String max_total_hour;
-	
-	@Column(name="amount")
-	private int amount;
-	
-	@Column(name="no_of_guest")
-	private String no_of_guest;
-	
-	@Column(name="photographer",columnDefinition = "text")
-	private String photographer_name_desc;
-	
-	@Column(name="dj",columnDefinition = "text")
-	private String dj_name_desc;
-	
-	@Column(name="makeupartist",columnDefinition = "text")
-	private String makeupartist_name_desc;
-	
-	@Column(name="decorator",columnDefinition = "text")
-	private String decorator_name_desc;
-	
-	@Column(name="bookedon")
-	private String current_date;
-	
-	@Column(name="accept_status")
-	private int accept_status;
-	
-	@Column(name="payment_status")
-	private int payment_status;
-	
-	@ManyToOne(fetch = FetchType.LAZY)
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    @Column(name = "event_date")
+    private Date eventDate;
+
+    @Column(name = "event_start_time")
+    private String startAt;
+
+    @Column(name = "max_total_hour")
+    private String maxTotalHour;
+
+    @Column(name = "amount")
+    private int amount;
+
+    @Column(name = "no_of_guest")
+    private String noOfGuest;
+
+    @Column(name = "photographer", columnDefinition = "text")
+    private String photographerNameDesc;
+
+    @Column(name = "dj", columnDefinition = "text")
+    private String djNameDesc;
+
+    @Column(name = "makeupartist", columnDefinition = "text")
+    private String makeupartistNameDesc;
+
+    @Column(name = "decorator", columnDefinition = "text")
+    private String decoratorNameDesc;
+
+    @Column(name = "bookedon")
+    private String currentDate;
+
+    @Column(name = "accept_status")
+    private int acceptStatus;
+
+    @Column(name = "payment_status")
+    private int paymentStatus;
+
+    // ===== RELATIONSHIPS =====
+
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-	
-	@ManyToOne
-@JoinColumn(name = "hotel_id")
-private Hotel hotel;
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "hotel_id")
+    private Hotel hotel;
 
-	
-	@ManyToOne
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "catering_id")
-	private Catering catering;
-	
-	@ManyToOne
+    private Catering catering;
+
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "event_id")
-	private Event event;
+    private Event event;
 
-	
-	
-	public Hotel getHotel() {
-		return hotel;
-	}
+    // ===== GETTERS & SETTERS =====
 
-	public void setHotel(Hotel hotel) {
-		this.hotel = hotel;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public Catering getCatering() {
-		return catering;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public void setCatering(Catering catering) {
-		this.catering = catering;
-	}
+    public Date getEventDate() {
+        return eventDate;
+    }
 
-	public Event getEvent() {
-		return event;
-	}
+    public void setEventDate(Date eventDate) {
+        this.eventDate = eventDate;
+    }
 
-	public void setEvent(Event event) {
-		this.event = event;
-	}
+    public String getStartAt() {
+        return startAt;
+    }
 
-	public User getUser() {
-		return user;
-	}
+    public void setStartAt(String startAt) {
+        this.startAt = startAt;
+    }
 
-	public void setUser(User user) {
-		this.user = user;
-	}
+    public String getMaxTotalHour() {
+        return maxTotalHour;
+    }
 
-	public int getId() {
-		return id;
-	}
+    public void setMaxTotalHour(String maxTotalHour) {
+        this.maxTotalHour = maxTotalHour;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public int getAmount() {
+        return amount;
+    }
 
-	
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
 
-	public Date getEvent_date() {
-		return event_date;
-	}
+    public String getNoOfGuest() {
+        return noOfGuest;
+    }
 
-	public void setEvent_date(Date event_date) {
-		this.event_date = event_date;
-	}
+    public void setNoOfGuest(String noOfGuest) {
+        this.noOfGuest = noOfGuest;
+    }
 
-	public String getStart_at() {
-		return start_at;
-	}
+    public String getPhotographerNameDesc() {
+        return photographerNameDesc;
+    }
 
-	public void setStart_at(String start_at) {
-		this.start_at = start_at;
-	}
+    public void setPhotographerNameDesc(String photographerNameDesc) {
+        this.photographerNameDesc = photographerNameDesc;
+    }
 
-	public String getMax_total_hour() {
-		return max_total_hour;
-	}
+    public String getDjNameDesc() {
+        return djNameDesc;
+    }
 
-	public void setMax_total_hour(String max_total_hour) {
-		this.max_total_hour = max_total_hour;
-	}
+    public void setDjNameDesc(String djNameDesc) {
+        this.djNameDesc = djNameDesc;
+    }
 
-	public int getAmount() {
-		return amount;
-	}
+    public String getMakeupartistNameDesc() {
+        return makeupartistNameDesc;
+    }
 
-	public void setAmount(int amount) {
-		this.amount = amount;
-	}
+    public void setMakeupartistNameDesc(String makeupartistNameDesc) {
+        this.makeupartistNameDesc = makeupartistNameDesc;
+    }
 
-	public String getNo_of_guest() {
-		return no_of_guest;
-	}
+    public String getDecoratorNameDesc() {
+        return decoratorNameDesc;
+    }
 
-	public void setNo_of_guest(String no_of_guest) {
-		this.no_of_guest = no_of_guest;
-	}
+    public void setDecoratorNameDesc(String decoratorNameDesc) {
+        this.decoratorNameDesc = decoratorNameDesc;
+    }
 
-	public String getPhotographer_name_desc() {
-		return photographer_name_desc;
-	}
+    public String getCurrentDate() {
+        return currentDate;
+    }
 
-	public void setPhotographer_name_desc(String photographer_name_desc) {
-		this.photographer_name_desc = photographer_name_desc;
-	}
+    public void setCurrentDate(String currentDate) {
+        this.currentDate = currentDate;
+    }
 
-	public String getDj_name_desc() {
-		return dj_name_desc;
-	}
+    public int getAcceptStatus() {
+        return acceptStatus;
+    }
 
-	public void setDj_name_desc(String dj_name_desc) {
-		this.dj_name_desc = dj_name_desc;
-	}
+    public void setAcceptStatus(int acceptStatus) {
+        this.acceptStatus = acceptStatus;
+    }
 
-	public String getMakeupartist_name_desc() {
-		return makeupartist_name_desc;
-	}
+    public int getPaymentStatus() {
+        return paymentStatus;
+    }
 
-	public void setMakeupartist_name_desc(String makeupartist_name_desc) {
-		this.makeupartist_name_desc = makeupartist_name_desc;
-	}
+    public void setPaymentStatus(int paymentStatus) {
+        this.paymentStatus = paymentStatus;
+    }
 
-	public String getDecorator_name_desc() {
-		return decorator_name_desc;
-	}
+    public User getUser() {
+        return user;
+    }
 
-	public void setDecorator_name_desc(String decorator_name_desc) {
-		this.decorator_name_desc = decorator_name_desc;
-	}
+    public void setUser(User user) {
+        this.user = user;
+    }
 
-	public String getCurrent_date() {
-		return current_date;
-	}
+    public Hotel getHotel() {
+        return hotel;
+    }
 
-	public void setCurrent_date(String current_date) {
-		this.current_date = current_date;
-	}
+    public void setHotel(Hotel hotel) {
+        this.hotel = hotel;
+    }
 
-	public int getAccept_status() {
-		return accept_status;
-	}
+    public Catering getCatering() {
+        return catering;
+    }
 
-	public void setAccept_status(int accept_status) {
-		this.accept_status = accept_status;
-	}
+    public void setCatering(Catering catering) {
+        this.catering = catering;
+    }
 
-	public int getPayment_status() {
-		return payment_status;
-	}
+    public Event getEvent() {
+        return event;
+    }
 
-	public void setPayment_status(int payment_status) {
-		this.payment_status = payment_status;
-	}
+    public void setEvent(Event event) {
+        this.event = event;
+    }
 
-	@Override
-	public String toString() {
-		return "Booking [id=" + id + ", event_date=" + event_date + ", start_at=" + start_at + ", max_total_hour="
-				+ max_total_hour + ", amount=" + amount + ", no_of_guest=" + no_of_guest + ", photographer_name_desc="
-				+ photographer_name_desc + ", dj_name_desc=" + dj_name_desc + ", makeupartist_name_desc="
-				+ makeupartist_name_desc + ", decorator_name_desc=" + decorator_name_desc + ", current_date="
-				+ current_date + ", accept_status=" + accept_status + ", payment_status=" + payment_status + ", user="
-				+ user + "]";
-	}
-
-
-
-
-	
-	
-	
-	
+    @Override
+    public String toString() {
+        return "Booking [id=" + id +
+                ", eventDate=" + eventDate +
+                ", startAt=" + startAt +
+                ", amount=" + amount +
+                ", acceptStatus=" + acceptStatus +
+                ", paymentStatus=" + paymentStatus + "]";
+    }
 }
+
