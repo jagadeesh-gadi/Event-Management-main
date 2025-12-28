@@ -29,7 +29,6 @@
 // 		public List<Hotel> findbykey(String searchkey);
 
 // }
-
 package com.app.demo.repository;
 
 import java.util.List;
@@ -92,4 +91,5 @@ public interface HotelRepo extends JpaRepository<Hotel, Integer> {
     )
     List<Hotel> findbykey(@Param("key") String key);
 }
+
 
