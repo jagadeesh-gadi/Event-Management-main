@@ -49,12 +49,12 @@ public interface HotelRepo extends JpaRepository<Hotel, Integer> {
     @Modifying
     @Transactional
     @Query(
-      "UPDATE Hotel h SET " +
-      "h.hotelName = :hotelName, " +
-      "h.hotelDesc = :hotelDesc, " +
-      "h.location = :location, " +
-      "h.price = :price " +
-      "WHERE h.id = :id"
+        "UPDATE Hotel h SET " +
+        "h.hotelName = :hotelName, " +
+        "h.hotelDesc = :hotelDesc, " +
+        "h.location = :location, " +
+        "h.price = :price " +
+        "WHERE h.id = :id"
     )
     void updateHotel(
         @Param("hotelName") String hotelName,
@@ -67,13 +67,13 @@ public interface HotelRepo extends JpaRepository<Hotel, Integer> {
     @Modifying
     @Transactional
     @Query(
-      "UPDATE Hotel h SET " +
-      "h.hotelName = :hotelName, " +
-      "h.hotelDesc = :hotelDesc, " +
-      "h.location = :location, " +
-      "h.price = :price, " +
-      "h.hotelImg1 = :image " +
-      "WHERE h.id = :id"
+        "UPDATE Hotel h SET " +
+        "h.hotelName = :hotelName, " +
+        "h.hotelDesc = :hotelDesc, " +
+        "h.location = :location, " +
+        "h.price = :price, " +
+        "h.hotelImg1 = :image " +
+        "WHERE h.id = :id"
     )
     void updateHotelwithImage(
         @Param("hotelName") String hotelName,
@@ -85,10 +85,10 @@ public interface HotelRepo extends JpaRepository<Hotel, Integer> {
     );
 
     @Query(
-      "SELECT h FROM Hotel h " +
-      "WHERE h.hotelName LIKE %:key% " +
-      "OR h.location LIKE %:key% " +
-      "OR CAST(h.price AS string) LIKE %:key%"
+        "SELECT h FROM Hotel h " +
+        "WHERE h.hotelName LIKE %:key% " +
+        "OR h.location LIKE %:key% " +
+        "OR CAST(h.price AS string) LIKE %:key%"
     )
     List<Hotel> findbykey(@Param("key") String key);
 }
