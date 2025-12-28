@@ -128,7 +128,6 @@ public class Hotel {
     @Column(name = "hotel_desc")
     private String hotelDesc;
 
-    // ✅ FIXED: longblob should NOT be String
     @Lob
     @Column(name = "hotel_img1")
     private byte[] hotelImg1;
@@ -139,12 +138,11 @@ public class Hotel {
     @Column(name = "location")
     private String location;
 
-    // ✅ Prevent infinite JSON loop
     @JsonIgnore
     @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Booking> booking;
 
-    // ===== GETTERS & SETTERS =====
+    // ===== Getters & Setters =====
 
     public int getId() {
         return id;
@@ -211,4 +209,5 @@ public class Hotel {
                 ", location=" + location + "]";
     }
 }
+
 
